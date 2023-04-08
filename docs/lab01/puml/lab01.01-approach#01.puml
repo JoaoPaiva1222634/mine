@@ -1,0 +1,18 @@
+@startuml
+
+:START;
+    :READ:
+    * boys
+    * girls;
+
+    :total <- boys + grils
+    boysPercentage <- boys / total
+    girlsPercentage <- girls / total;
+
+    :DISPLAY:
+    * "Boys' percentage =", boysPercentage
+    * "Girls' percentage =", girlsPercentage;
+
+:END;
+
+@enduml

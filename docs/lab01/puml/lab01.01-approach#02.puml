@@ -1,0 +1,13 @@
+@startuml
+
+:START;
+note right : As argument receives\n(boys, girls)
+
+    :total <- boys + grils
+    boysPercentage <- boys / total
+    girlsPercentage <- girls / total;
+
+:RETURN;
+note right : boysPercentage,\ngirlsPercentage
+
+@enduml
