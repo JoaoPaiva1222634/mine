@@ -4,10 +4,14 @@ function getNumberOfWaysOfObtainingValue(value: number): number {
 
     let count: number = 0;
 
-    for (let i = 0, j = value; i <= j; i++, j--) {
-        if (i + j == value && i <= 10 && j <= 10)
-            count++
+    for (let i = 0; i <= 10; i++) {
+        for (let j = 10; j >= i; j--)
+            if (i + j == value)
+                count++
     }
 
     return count;
 }
+
+console.log(getNumberOfWaysOfObtainingValue(14))
+console.log(getNumberOfWaysOfObtainingValue(5))
