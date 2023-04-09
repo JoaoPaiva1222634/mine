@@ -1,5 +1,5 @@
 export function getNumberOfDigits(value: number): number {
-    if (value != Math.trunc(value))
+    if (!Number.isInteger(value))
         throw new RangeError('Number must be integer');
 
     let receivedNumber = value;

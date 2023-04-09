@@ -1,19 +1,13 @@
+import { getNumberOfDigits } from "./ex08a";
+import { getSumOfDigitsOfNumber } from "./ex08d";
+
 export function getAverageOfDigitsOfNumber(value: number): number {
-    if (value != Math.trunc(value))
+    if (!Number.isInteger(value))
         throw new RangeError('Number must be integer');
 
-    let valueAsString: string = value.toString();
-    let numberOfDigits: number = value.toString().length;
-    let sumOfDigits: number = 0;
-    let digitsAverage: number = 0
-
-    for (let i = 0; i < numberOfDigits; i++) {
-
-        let digit: number = parseInt(valueAsString[i]);
-
-        sumOfDigits += digit;
-        digitsAverage = sumOfDigits / numberOfDigits
-    }
+    let numberOfDigits: number = getNumberOfDigits(value);
+    let sumOfDigits: number = getSumOfDigitsOfNumber(value);
+    let digitsAverage: number = sumOfDigits / numberOfDigits;
 
     return digitsAverage;
 }

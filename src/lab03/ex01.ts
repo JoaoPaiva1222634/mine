@@ -11,7 +11,7 @@ FIM
 */
 
 export function getFactorial(num: number): number {
-    if (num < 0 || num != Math.trunc(num) || num > 50)
+    if (num < 0 || Number.isInteger(num) == false || num > 50)
         throw new RangeError('number must be a positive integer no bigger than 50');
 
     let res: number = 1;

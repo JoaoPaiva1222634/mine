@@ -1,14 +1,15 @@
-export function getSumOfEvenDigitsOfNumber(value: number): number {
-    if (value != Math.trunc(value))
-        throw new RangeError('Number must be integer');
+import { getNumberOfDigits } from "./ex08a";
 
-    let valueAsString: string = value.toString();
-    let numberOfDigits: number = value.toString().length;
+export function getSumOfEvenDigitsOfNumber(value: number): number {
+    if (!Number.isInteger(value)) 
+        throw new RangeError('Number must be integer');
+    
+    let numberOfDigits: number = getNumberOfDigits(value);
     let sumOfEvenDigits: number = 0;
 
     for (let i = 0; i < numberOfDigits; i++) {
 
-        let digit: number = parseInt(valueAsString[i]);
+        let digit: number = Math.abs(Math.trunc((value / 10 ** i) % 10));
 
         if (digit % 2 == 0)
             sumOfEvenDigits += digit;

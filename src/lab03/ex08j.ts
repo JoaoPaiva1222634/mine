@@ -1,23 +1,20 @@
+import { getNumberOfDigits } from "./ex08a";
+
 function getReverseOfDecreasingNumber(value: number) {
-    if (value != Math.trunc(value))
+    if (!Number.isInteger(value))
         throw new RangeError('Value must be an integer number');
 
-    let valueAsString: string = value.toString();
-    let numberOfDigits: number = valueAsString.length;
-    let valueSplitIntoArray: string[] = valueAsString.split("")
-    let reversedNumber: number = -1;
-    let count: number = 0;
+    let numberOfDigits: number = getNumberOfDigits(value);
+    let reversedNumber: number = 0;
 
-    for (let i = 0; i < numberOfDigits - 1; i++) {
+    for (let i = 0; i < numberOfDigits; i++) {
+        let digit: number = Math.trunc((value / 10 ** i)) % 10;
+        let nextDigit = (Math.trunc(value / 10) % 10);
+        reversedNumber = reversedNumber * 10 + digit;
 
-        if (valueAsString[i] > valueAsString[i + 1]) {
-            count++
-        }
-
-        if (count == numberOfDigits - 1) {
-            let reversedString: string[] = valueSplitIntoArray.reverse();
-            reversedNumber = parseInt(reversedString.join(""));
-        }
+        if (i < numberOfDigits - 1)
+            if (digit > nextDigit)
+                return -1;
     }
 
     return reversedNumber;
