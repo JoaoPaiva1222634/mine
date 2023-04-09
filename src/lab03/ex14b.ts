@@ -6,7 +6,7 @@ function checkIfDogEatsProperAmountOfFoodForRandomWeightAndFoodAmount() {
 
     do {
         dogWeight = Math.random() * (160 + 160) - 160;
-        let foodAmount: number = Math.random() * 1000;
+        let foodAmount: number = Math.random() * 750;
         result = checkIfDogEatsProperAmountOfFood(dogWeight, foodAmount);
         console.log(dogWeight, foodAmount, result);
 
