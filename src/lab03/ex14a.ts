@@ -16,7 +16,7 @@ export function checkIfDogEatsProperAmountOfFood(dogWeight: number, foodAmount: 
     return result;
 }
 
-function checkIfSmallDogEatsProperAmountOfFood(foodAmount: number): number {
+export function checkIfSmallDogEatsProperAmountOfFood(foodAmount: number): number {
     let result: number = 0;
 
     if (foodAmount > 100) {
@@ -28,7 +28,7 @@ function checkIfSmallDogEatsProperAmountOfFood(foodAmount: number): number {
     return result;
 }
 
-function checkIfMediumDogEatsProperAmountOfFood(foodAmount: number): number {
+export function checkIfMediumDogEatsProperAmountOfFood(foodAmount: number): number {
     let result: number = 0;
 
     if (foodAmount > 250) {
@@ -40,7 +40,7 @@ function checkIfMediumDogEatsProperAmountOfFood(foodAmount: number): number {
     return result;
 }
 
-function checkIfBigDogEatsProperAmountOfFood(foodAmount: number): number {
+export function checkIfBigDogEatsProperAmountOfFood(foodAmount: number): number {
     let result: number = 0;
 
     if (foodAmount > 300) {
@@ -52,7 +52,7 @@ function checkIfBigDogEatsProperAmountOfFood(foodAmount: number): number {
     return result;
 }
 
-function checkIfGiantDogEatsProperAmountOfFood(foodAmount: number): number {
+export function checkIfGiantDogEatsProperAmountOfFood(foodAmount: number): number {
     let result: number = 0;
 
     if (foodAmount > 500) {
