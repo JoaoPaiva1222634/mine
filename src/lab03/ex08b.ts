@@ -1,9 +1,7 @@
 import { getNumberOfDigits } from "./ex08a";
 
 export function getNumberOfEvenDigits(value: number): number {
-    if (!Number.isInteger(value))
-        throw new RangeError('Number must be integer');
-
+    
     let numberOfDigits: number = getNumberOfDigits(value);
     let digit: number = 0;
     let even: number = 0;

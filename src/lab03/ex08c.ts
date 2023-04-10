@@ -1,8 +1,6 @@
 import { getNumberOfDigits } from "./ex08a";
 
 export function getNumberOfOddDigits(value: number): number {
-    if (!Number.isInteger(value))
-        throw new RangeError('Number must be integer');
 
     let numberOfDigits: number = getNumberOfDigits(value);
     let digit: number = 0;

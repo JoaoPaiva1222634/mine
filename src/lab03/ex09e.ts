@@ -1,3 +1,6 @@
+import { getNumberOfDigits } from "./ex08a";
+import { getReverseOfNumber } from "./ex08j";
+
 function getNumberOfPalindromesOfInterval(intervalStart: number, intervalEnd: number): number {
     if (intervalStart > -11 && intervalEnd < 11)
         throw new RangeError('Interval must contain at least one palindrome')
@@ -5,9 +8,9 @@ function getNumberOfPalindromesOfInterval(intervalStart: number, intervalEnd: nu
     let numberOfPalindromes: number = 0;
 
     for (let i = intervalStart; i <= intervalEnd; i++) {
-        let reversedNumber: number = +(i.toString().split("").reverse().join(""))
+        let reversedNumber: number = getReverseOfNumber(i);
 
-        if (i == reversedNumber && i.toString().length > 1) {
+        if (i == reversedNumber && getNumberOfDigits(i) > 1) {
             numberOfPalindromes++
         }
     }

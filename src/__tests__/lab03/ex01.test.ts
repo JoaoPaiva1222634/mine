@@ -23,9 +23,9 @@ describe('testing function getAlg', () => {
         expect(res).toBe(expectedRes);
     });
 
-    test('for 50 should be 3.0414093201713376e+64', ()=> {
-        const num:number = 50;
-        const expectedRes: number = 3.0414093201713376e+64;
+    test('for 18 should be 6402373705728000', ()=> {
+        const num:number = 18;
+        const expectedRes: number = 6402373705728000;
 
         //Act
         let res: number = getFactorial(num);
@@ -37,18 +37,18 @@ describe('testing function getAlg', () => {
     test('negative should throw error', () => {
         expect(() => {
             getFactorial(-1);
-        }).toThrow('number must be a positive integer no bigger than 50');
+        }).toThrow('number must be a positive integer no bigger than 18');
     });
 
     test('decimals should throw error', () => {
         expect(() => {
             getFactorial(0.5);
-        }).toThrow('number must be a positive integer no bigger than 50');
+        }).toThrow('number must be a positive integer no bigger than 18');
     });
 
     test('bigger than 50 should throw error', () => {
         expect(() => {
-            getFactorial(51);
-        }).toThrow('number must be a positive integer no bigger than 50');
+            getFactorial(19);
+        }).toThrow('number must be a positive integer no bigger than 18');
     });
 });

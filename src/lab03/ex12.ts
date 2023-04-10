@@ -1,8 +1,8 @@
 function getNumberClassification(value: number): number {
     if (value < 0)
-        throw new RangeError('Value must be positive number')
+        throw new RangeError('Value must be a positive number')
 
-    if (value != Math.trunc(value))
+    if (!Number.isInteger(value))
         throw new RangeError('Value must be an integer number')
 
     let result: number = 0;

@@ -13,10 +13,10 @@ describe('testing function getSumOfEvenDigitsOfNumber', () => {
         expect(sum).toBe(expectedSum);
     });
 
-    test('testing if for -2016 returns 8', () => {
+    test('testing if for -2016 returns -8', () => {
         //Arrange
         const value: number = -206;
-        const expectedSum: number = 8;
+        const expectedSum: number = -8;
 
         //Act
         let sum: number = getSumOfEvenDigitsOfNumber(value);
@@ -61,10 +61,10 @@ describe('testing function getSumOfEvenDigitsOfNumber', () => {
         expect(sum).toBe(expectedSum);
     });
 
-    test('testing if for -13726 returns 8', () => {
+    test('testing if for -13726 returns -8', () => {
         //Arrange
         const value: number = -13726;
-        const expectedSum: number = 8;
+        const expectedSum: number = -8;
 
         //Act
         let sum: number = getSumOfEvenDigitsOfNumber(value);

@@ -1,5 +1,5 @@
 function separateEvenAndOddNumbers(numberSequence: number[]): number[][] {
-    let checkNumbers: number[] = numberSequence.filter((number) => number > 9 || number > 9);
+    let checkNumbers: number[] = numberSequence.filter((number) => number > 9 || number < -9);
     if (checkNumbers.length != 0)
         throw new RangeError('Numbers in sequence must have only one digit');
 

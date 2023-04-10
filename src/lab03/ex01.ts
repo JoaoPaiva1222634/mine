@@ -11,8 +11,8 @@ FIM
 */
 
 export function getFactorial(num: number): number {
-    if (num < 0 || Number.isInteger(num) == false || num > 50)
-        throw new RangeError('number must be a positive integer no bigger than 50');
+    if (num < 0 || !Number.isInteger(num) || num > 18) //18 is the biggest number that has a factorial lower than MAX_SAFE_INTEGER
+        throw new RangeError('number must be a positive integer no bigger than 18');
 
     let res: number = 1;
 

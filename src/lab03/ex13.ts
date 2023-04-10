@@ -12,6 +12,3 @@ function getNumberOfWaysOfObtainingValue(value: number): number {
 
     return count;
 }
-
-console.log(getNumberOfWaysOfObtainingValue(14))
-console.log(getNumberOfWaysOfObtainingValue(5))

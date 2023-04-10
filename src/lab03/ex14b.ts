@@ -12,5 +12,3 @@ function checkIfDogEatsProperAmountOfFoodForRandomWeightAndFoodAmount() {
 
     } while (dogWeight >= 0)
 }
-
-console.log(checkIfDogEatsProperAmountOfFoodForRandomWeightAndFoodAmount())

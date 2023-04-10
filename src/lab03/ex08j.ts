@@ -1,20 +1,44 @@
 import { getNumberOfDigits } from "./ex08a";
 
-function getReverseOfDecreasingNumber(value: number) {
-    if (!Number.isInteger(value))
-        throw new RangeError('Value must be an integer number');
+export function getReverseOfDecreasingNumber(value: number): number {
+
+    if (getNumberOfDigits(value) < 2)
+        throw new RangeError('Number must have at least two digits')
+
+    let reverseOfIncreasingNumber: number = 0;
+
+    if (checkIfDigitsAreDecreasing(value))
+        reverseOfIncreasingNumber = getReverseOfNumber(value);
+
+    return reverseOfIncreasingNumber;
+}
+
+export function checkIfDigitsAreDecreasing(value: number): boolean {
+
+    let result: boolean = true;
+    let numberOfDigits: number = getNumberOfDigits(value);
+    let receivedNumber: number = value;
+
+    for (let i = 0; i < numberOfDigits; i++) {
+        let digit: number = Math.trunc(value / 10 ** i) % 10;
+        let nextDigit = (Math.trunc(receivedNumber /= 10) % 10);
+
+        if (i < numberOfDigits - 1)
+            if (digit >= nextDigit)
+                result = false;
+    }
+
+    return result;
+}
+
+export function getReverseOfNumber(value: number) {
 
     let numberOfDigits: number = getNumberOfDigits(value);
     let reversedNumber: number = 0;
 
     for (let i = 0; i < numberOfDigits; i++) {
         let digit: number = Math.trunc((value / 10 ** i)) % 10;
-        let nextDigit = (Math.trunc(value / 10) % 10);
         reversedNumber = reversedNumber * 10 + digit;
-
-        if (i < numberOfDigits - 1)
-            if (digit > nextDigit)
-                return -1;
     }
 
     return reversedNumber;

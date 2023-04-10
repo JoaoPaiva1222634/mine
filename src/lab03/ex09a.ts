@@ -1,14 +1,13 @@
-function checkIfNumberIsPalindrome(value: number): boolean {
-    if (value != Math.trunc(value))
-        throw new RangeError ('Value must be an integer number')
+import { getReverseOfNumber } from "./ex08j";
 
-    if (value / 10 != Math.trunc(value/10))
+function checkIfNumberIsPalindrome(value: number): boolean {
+
+    if (value > -9 && value < 9)
         throw new RangeError('Value must be a number with at least two digits')
 
-    let valueSplitIntoArray: string[] = value.toString().split("");
-    let reversedValue: number = +valueSplitIntoArray.reverse().join("");
+    let reversedValue: number = getReverseOfNumber(value);
     let result = false
-    
+
     if (value == reversedValue)
         result = true;
 
