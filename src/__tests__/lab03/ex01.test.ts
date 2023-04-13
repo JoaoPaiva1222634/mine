@@ -34,6 +34,28 @@ describe('testing function getAlg', () => {
         expect(res).toBe(expectedRes);
     });
 
+    test('for 2 should be 2', ()=> {
+        const num:number = 2;
+        const expectedRes: number = 2;
+
+        //Act
+        let res: number = getFactorial(num);
+
+        //Assert
+        expect(res).toBe(expectedRes);
+    });
+
+    test('for 3 should be 6', ()=> {
+        const num:number = 3;
+        const expectedRes: number = 6;
+
+        //Act
+        let res: number = getFactorial(num);
+
+        //Assert
+        expect(res).toBe(expectedRes);
+    });
+
     test('negative should throw error', () => {
         expect(() => {
             getFactorial(-1);

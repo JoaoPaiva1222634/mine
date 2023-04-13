@@ -22,3 +22,4 @@ export function getFactorial(num: number): number {
 
     return res;
 };
+

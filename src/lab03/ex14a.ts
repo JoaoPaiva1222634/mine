@@ -1,16 +1,16 @@
 export function checkIfDogEatsProperAmountOfFood(dogWeight: number, foodAmount: number): number {
+
+    /*if (dogWeight <= 0)
+        throw new RangeError('Dog weight must be above 0');*/
+
     let result: number = checkIfGiantDogEatsProperAmountOfFood(foodAmount);
 
     if (dogWeight <= 10) {
         result = checkIfSmallDogEatsProperAmountOfFood(foodAmount);
-    } else {
-        if (dogWeight <= 25) {
-            result = checkIfMediumDogEatsProperAmountOfFood(foodAmount);
-        } else {
-            if (dogWeight <= 45) {
-                result = checkIfBigDogEatsProperAmountOfFood(foodAmount);
-            }
-        }
+    } else if (dogWeight <= 25) {
+        result = checkIfMediumDogEatsProperAmountOfFood(foodAmount);
+    } else if (dogWeight <= 45) {
+        result = checkIfBigDogEatsProperAmountOfFood(foodAmount);
     }
 
     return result;

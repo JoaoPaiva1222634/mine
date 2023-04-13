@@ -1,4 +1,4 @@
-function getNumberClassification(value: number): number {
+export function getNumberClassification(value: number): number {
     if (value < 0)
         throw new RangeError('Value must be a positive number')
 
