@@ -10,5 +10,6 @@ export function getNumberOfMultiplesInterval(num: number, intervalStart: number,
         }
     }
 
+
     return numberOfMultiples;
 }

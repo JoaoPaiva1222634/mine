@@ -11,7 +11,7 @@ describe('testing function checkIfDogEatsProperAmountOfFoodForListOfValues', () 
         let result: number[] = checkIfDogEatsProperAmountOfFoodForListOfValues(dogWeightList, foodAmountList);
 
         //Assert
-        for (let i = 0; i != 3; i++)
+        for (let i = 0; i != expectedResult.length; i++)
             expect(result[i]).toBe(expectedResult[i])
     });
 
@@ -27,5 +27,17 @@ describe('testing function checkIfDogEatsProperAmountOfFoodForListOfValues', () 
         //Assert
         for (let i = 0; i != expectedResult.length; i++)
             expect(result[i]).toBe(expectedResult[i])
+    });
+
+    test('For input arrays of different length should throw error', () => {
+        expect(() => {
+            checkIfDogEatsProperAmountOfFoodForListOfValues([0,1], [100]);
+        }).toThrow('Provided arrays must have the same length');
+    });
+
+    test('For empty arrays should throw error', () => {
+        expect(() => {
+            checkIfDogEatsProperAmountOfFoodForListOfValues([], []);
+        }).toThrow('There must be at least one value in the provided arrays');
     });
 });

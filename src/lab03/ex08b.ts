@@ -1,7 +1,7 @@
 import { getNumberOfDigits } from "./ex08a";
 
 export function getNumberOfEvenDigits(value: number): number {
-    
+
     let numberOfDigits: number = getNumberOfDigits(value);
     let digit: number = 0;
     let even: number = 0;

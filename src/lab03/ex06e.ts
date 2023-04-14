@@ -2,7 +2,7 @@ export function getSumOfMultiplesOfTwoNumbersInInterval(num1: number, num2: numb
     if (intervalStart < 0)
         throw new RangeError('Interval start must not be negative');
 
-    if (num1 != Math.trunc(num1) || num2 != Math.trunc(num2))
+    if (!Number.isInteger(num1) || !Number.isInteger(num2))
         throw new RangeError('Numbers must be integers');
 
     if (num1 == num2)
@@ -18,6 +18,3 @@ export function getSumOfMultiplesOfTwoNumbersInInterval(num1: number, num2: numb
 
     return numberOfMultiples;
 }
-
-
-console.log(getSumOfMultiplesOfTwoNumbersInInterval(3,5,0,20))

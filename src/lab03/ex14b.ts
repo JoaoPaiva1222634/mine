@@ -18,6 +18,12 @@ function checkIfDogEatsProperAmountOfFoodForRandomWeightAndFoodAmount() {
 
 export function checkIfDogEatsProperAmountOfFoodForListOfValues(dogWeightList: number[], foodAmountList: number[]): number[] {
 
+    if (dogWeightList.length != foodAmountList.length)
+        throw new RangeError('Provided arrays must have the same length')
+
+    if (dogWeightList.length == 0)
+        throw new RangeError('There must be at least one value in the provided arrays')
+
     let n = 0;
     let dogWeight: number = dogWeightList[n];
     let foodAmount: number = foodAmountList[n];

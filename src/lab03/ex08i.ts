@@ -3,7 +3,6 @@ import { getNumberOfOddDigits } from "./ex08c";
 
 export function getAverageOfOddDigitsOfNumber(value: number): number {
 
-
     let numberOfOddDigits: number = getNumberOfOddDigits(value);
 
     if (numberOfOddDigits == 0)
