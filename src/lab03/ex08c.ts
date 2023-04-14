@@ -24,7 +24,7 @@ export function getNumberOfOddDigits(value: number): number {
 export function getNumberOfOddDigits(value: number): number {
 
     if (!Number.isInteger(value))
-    throw new RangeError('Number must be integer');
+        throw new RangeError('Number must be integer');
 
     let valueDividedByTen: number = value;
     let digit: number = 0;

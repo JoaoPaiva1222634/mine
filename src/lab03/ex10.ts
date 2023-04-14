@@ -5,3 +5,6 @@ export function getMonthlySalary(baseSalary: number, overtime: number) {
 
     return monthlySalary;
 }
+
+
+console.log(getMonthlySalary(500,2))
