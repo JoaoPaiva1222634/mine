@@ -26,8 +26,14 @@ describe('testing function getNumberOfDigitsLab4', () => {
     });
 
     test('negative value should throw error', () => {
+        //Arrange
+        const value: number = -19;
+
+        //Act
+
+        //Assert
         expect(() => {
-            getNumberOfDigitsLab4(-19);
-        }).toThrow('Number must be positive');
+            getNumberOfDigitsLab4(value);
+        }).toThrow('Number must be a positive integer');
     });
 });

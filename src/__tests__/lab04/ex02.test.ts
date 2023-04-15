@@ -10,7 +10,7 @@ describe('getDigitsOfNumberIntoArray', () => {
         let array: number[] = getDigitsOfNumberIntoArray(value);
 
         //Assert
-        for (let i = 0; i != expectedArray.length; i++)
+        for (let i = 0; i != array.length; i++)
             expect(array[i]).toBe(expectedArray[i]);
     });
 });

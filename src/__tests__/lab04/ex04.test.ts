@@ -10,7 +10,20 @@ describe('testing function getEvenNumbersOfArray', () => {
         let evenNumbersOfArray: number[] = getEvenNumbersOfArray(array);
 
         //Assert
-        for (let i = 0; i != expectedEvenNumbersOfArray.length; i++)
+        for (let i = 0; i != evenNumbersOfArray.length; i++)
+            expect(evenNumbersOfArray[i]).toBe(expectedEvenNumbersOfArray[i])
+    });
+
+    test('testing if for [3,7,1] result is []', () => {
+        //Arrange
+        const array: number[] = [3, 7, 1];
+        const expectedEvenNumbersOfArray: number[] = [];
+
+        //Act
+        let evenNumbersOfArray: number[] = getEvenNumbersOfArray(array);
+
+        //Assert
+        for (let i = 0; i != evenNumbersOfArray.length; i++)
             expect(evenNumbersOfArray[i]).toBe(expectedEvenNumbersOfArray[i])
     });
 });

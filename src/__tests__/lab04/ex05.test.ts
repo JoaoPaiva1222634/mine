@@ -13,4 +13,17 @@ describe('testing function getOddNumbersOfArray', () => {
         for (let i = 0; i != expectedOddNumbersOfArray.length; i++)
             expect(oddNumbersOfArray[i]).toBe(expectedOddNumbersOfArray[i])
     });
+
+    test('testing if for [2,6,8] result is []', () => {
+        //Arrange
+        const array: number[] = [2, 6, 8];
+        const expectedOddNumbersOfArray: number[] = [];
+
+        //Act
+        let oddNumbersOfArray: number[] = getOddNumbersOfArray(array);
+
+        //Assert
+        for (let i = 0; i != expectedOddNumbersOfArray.length; i++)
+            expect(oddNumbersOfArray[i]).toBe(expectedOddNumbersOfArray[i])
+    });
 });

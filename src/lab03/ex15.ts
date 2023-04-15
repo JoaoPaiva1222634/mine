@@ -10,7 +10,7 @@ export function checkIfCcNumberIsValid(idNumber: number, checkNumber: number): b
     let valueDividedByTen: number = idNumber;
     let digit: number = 0;
 
-    for (let i = 0, j = 2; i <= 7; i++, j++) {
+    for (let i = 0, j = 2; i != 8; i++, j++) {
         valueDividedByTen = valueDividedByTen / 10**i;
         digit = Math.trunc(valueDividedByTen % 10);
         numberVerification += digit * j;
