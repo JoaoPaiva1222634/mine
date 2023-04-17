@@ -1,3 +1,11 @@
+/**
+ * 
+ * @param intervalStart Start value of the interval
+ * @param intervalEnd End value of the interval
+ * @param multiplesOfArray Array of the numbers to check if are multiples of
+ * @returns common multiples of N numbers in multiplesOfArray
+ */
+
 export function getCommonMultiplesOfNNumberInInterval(intervalStart: number, intervalEnd: number, multiplesOfArray: number[]): number[] {
     
     let commonMultiplesOfNNumberInInterval: number [] = isolateCommonMultiplesOfNNumbers(getMultiplesOfEachNNumberInInterval(intervalStart,intervalEnd,multiplesOfArray));

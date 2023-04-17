@@ -1,6 +1,12 @@
 import { getDigitsOfNumberIntoArray } from "./ex02";
 import { getOddNumbersOfArray } from "./ex05";
 
+/**
+ * 
+ * @param value Entry value
+ * @returns Sum of the odd digits of entry value
+ */
+
 export function getSumOfOddDigitsOfNumber(value: number): number {
 
     let sumOfOddDigitsOfNumber: number = 0;

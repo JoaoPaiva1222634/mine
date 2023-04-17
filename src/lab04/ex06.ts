@@ -1,6 +1,12 @@
 import { getDigitsOfNumberIntoArray } from "./ex02";
 import { getEvenNumbersOfArray } from "./ex04";
 
+/**
+ * 
+ * @param value Entry value
+ * @returns Sum of the even digits of entry value
+ */
+
 export function getSumOfEvenDigitsOfNumber(value: number): number {
 
     let sumOfEvenDigitsOfNumber: number = 0;

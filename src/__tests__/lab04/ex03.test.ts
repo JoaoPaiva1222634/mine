@@ -1,4 +1,4 @@
-import { getSumOfDigitsOfArray } from "../../lab04/ex03";
+import { getSumOfNumbersOfArray } from "../../lab04/ex03";
 
 describe('testing function getSumOfDigitsOfArray', () => {
     test('testing for [3,6,7,8,1] result is 25', () => {
@@ -7,7 +7,7 @@ describe('testing function getSumOfDigitsOfArray', () => {
         const expectedSumOfDigitsOfArray: number = 25;
 
         //Act
-        let sumOfDigitsOfArray: number = getSumOfDigitsOfArray(array);
+        let sumOfDigitsOfArray: number = getSumOfNumbersOfArray(array);
 
         //Assert
 

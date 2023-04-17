@@ -1,6 +1,10 @@
-import { getNumberOfDigitsLab4 } from "./ex01";
+/**
+ * 
+ * @param array Entry array of numbers
+ * @returns Sum of all the numbers in the entry array
+ */
 
-export function getSumOfDigitsOfArray(array: number[]): number {
+export function getSumOfNumbersOfArray(array: number[]): number {
 
     let sumOfDigitsOfArray: number = 0;
 

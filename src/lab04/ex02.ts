@@ -1,5 +1,11 @@
 import { getNumberOfDigitsLab4 } from "./ex01";
 
+/**
+ * 
+ * @param value Entry value
+ * @returns Array with digits of the entry value
+ */
+
 export function getDigitsOfNumberIntoArray(value: number): number[] {
 
     let resultArray: number[] = [];

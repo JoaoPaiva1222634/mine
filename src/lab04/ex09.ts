@@ -1,3 +1,10 @@
+/**
+ * 
+ * @param intervalStart Initial value of the interval
+ * @param intervalEnd Last value of the interval
+ * @returns Array of numbers that are multiples of 3
+ */
+
 export function getMultiplesOf3InInterval(intervalStart: number, intervalEnd: number): number[] {
 
     let multiplesOf3InInterval: number[] = [];

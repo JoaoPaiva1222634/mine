@@ -1,5 +1,11 @@
 import { getNumberOfDigits } from "../lab03/ex08a";
 
+/**
+ * 
+ * @param value Entry value number
+ * @returns The number of digits of the entry value
+ */
+
 export function getNumberOfDigitsLab4(value: number): number {
 
     if (!Number.isInteger(value) || value < 0)
