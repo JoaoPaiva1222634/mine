@@ -13,4 +13,16 @@ describe('getDigitsOfNumberIntoArray', () => {
         for (let i = 0; i != array.length; i++)
             expect(array[i]).toBe(expectedArray[i]);
     });
+
+    test('NaN value should throw error', () => {
+        //Arrange
+        const value: number = NaN;
+
+        //Act
+
+        //Assert
+        expect(() => {
+            getDigitsOfNumberIntoArray(value);
+        }).toThrow('Number must be a positive integer');
+    });
 });

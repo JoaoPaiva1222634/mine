@@ -19,8 +19,8 @@ export function calculateGenderPercentage(boys: number, girls: number): [number,
     let boysPercentage = boys / total;
     let girlsPercentage = girls / total;
 
-    console.log("Boys Percentage: " + boysPercentage);
-    console.log("Girls Percentage: " + girlsPercentage);
+    //console.log("Boys Percentage: " + boysPercentage);
+    //console.log("Girls Percentage: " + girlsPercentage);
     return [boysPercentage, girlsPercentage];
 }
 

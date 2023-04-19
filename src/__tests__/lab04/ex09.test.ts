@@ -42,4 +42,18 @@ describe('testing function getMultiplesOf3InInterval', () => {
         for (let i = 0; i != expectedMultiplesOf3InInterval.length; i++)
             expect(multiplesOf3InInterval[i]).toBe(expectedMultiplesOf3InInterval[i])
     });
+
+    test('testing for 0 to 2 result is []', () => {
+        //Arrange
+        const intervalStart: number = NaN;
+        const intervalEnd: number = NaN;
+        const expectedMultiplesOf3InInterval: number[] = [];
+
+        //Act
+        let multiplesOf3InInterval: number[] = getMultiplesOf3InInterval(intervalStart, intervalEnd);
+
+        //Assert
+        for (let i = 0; i != expectedMultiplesOf3InInterval.length; i++)
+            expect(multiplesOf3InInterval[i]).toBe(expectedMultiplesOf3InInterval[i])
+    });
 });

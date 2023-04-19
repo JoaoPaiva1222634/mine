@@ -26,4 +26,16 @@ describe('testing function getOddNumbersOfArray', () => {
         for (let i = 0; i != expectedOddNumbersOfArray.length; i++)
             expect(oddNumbersOfArray[i]).toBe(expectedOddNumbersOfArray[i])
     });
+
+    test('NaN value should throw error', () => {
+        //Arrange
+        const value: number[] = [NaN];
+
+        //Act
+
+        //Assert
+        expect(() => {
+            getOddNumbersOfArray(value);
+        }).toThrow('Array must have only integer numbers');
+    });
 });

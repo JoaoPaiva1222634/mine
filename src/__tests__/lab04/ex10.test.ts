@@ -45,4 +45,19 @@ describe('testing function getMultiplesOfNInInterval', () => {
         for (let i = 0; i != expectedMultiplesOfNInInterval.length; i++)
             expect(multiplesOfNInInterval[i]).toBe(expectedMultiplesOfNInInterval[i])
     });
+
+    test('testing for 4 to 10 and 12 result is []', () => {
+        //Arrange
+        const intervalStart: number = NaN;
+        const intervalEnd: number = NaN;
+        const n: number = 12;
+        const expectedMultiplesOfNInInterval: number[] = [];
+
+        //Act
+        let multiplesOfNInInterval: number[] = getMultiplesOfNInInterval(intervalStart, intervalEnd, n);
+
+        //Assert
+        for (let i = 0; i != expectedMultiplesOfNInInterval.length; i++)
+            expect(multiplesOfNInInterval[i]).toBe(expectedMultiplesOfNInInterval[i])
+    });
 });
