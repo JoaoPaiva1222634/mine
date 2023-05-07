@@ -14,6 +14,5 @@ export function getHighestNumberOfMatrix(matrix: number[][]): number {
                 highestNumberOfMatrix = matrix[i][j];
     }
 
-
     return highestNumberOfMatrix;
 }

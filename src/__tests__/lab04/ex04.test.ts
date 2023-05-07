@@ -10,8 +10,9 @@ describe('testing function getEvenNumbersOfArray', () => {
         let evenNumbersOfArray: number[] = getEvenNumbersOfArray(array);
 
         //Assert
+        expect(evenNumbersOfArray.length).toBe(expectedEvenNumbersOfArray.length);
         for (let i = 0; i != evenNumbersOfArray.length; i++)
-            expect(evenNumbersOfArray[i]).toBe(expectedEvenNumbersOfArray[i])
+            expect(evenNumbersOfArray[i]).toBe(expectedEvenNumbersOfArray[i]);
     });
 
     test('testing if for [3,7,1] result is []', () => {
@@ -23,7 +24,8 @@ describe('testing function getEvenNumbersOfArray', () => {
         let evenNumbersOfArray: number[] = getEvenNumbersOfArray(array);
 
         //Assert
+        expect(evenNumbersOfArray.length).toBe(expectedEvenNumbersOfArray.length);
         for (let i = 0; i != evenNumbersOfArray.length; i++)
-            expect(evenNumbersOfArray[i]).toBe(expectedEvenNumbersOfArray[i])
+            expect(evenNumbersOfArray[i]).toBe(expectedEvenNumbersOfArray[i]);
     });
 });

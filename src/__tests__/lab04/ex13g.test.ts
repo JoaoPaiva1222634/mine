@@ -59,7 +59,7 @@ describe('testing function getPrimeNumbersInArray', () => {
 
     test('testing for an array with prime and non prime numbers', () => {
         //Arrange
-        const array: number[] = [97, 1, 2, 3, 4, 5, 6, 7, 9, 11];
+        const array: number[] = [97, 1, 2, 3, 4, 5, 6, 7, 9, 11, 12];
         const expectedPrimeNumbersOfArray: number[] = [97, 2, 3, 5, 7, 11];
 
         //Act

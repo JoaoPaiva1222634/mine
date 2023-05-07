@@ -42,11 +42,13 @@ export function getPrimeNumbersInArray(array: number[]): number[] {
 
             let j: number = 2;
             let max: number = Math.sqrt(array[i]);
+            let nonPrime: boolean = false;
 
             while (j <= max) {
 
-                if (array[i] % j == 0) {
+                if (array[i] % j == 0 && !nonPrime) {
                     primeNumbersOfArray.pop();
+                    nonPrime = true;
                 }
 
                 j++;

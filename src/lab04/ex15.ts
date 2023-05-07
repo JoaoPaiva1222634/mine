@@ -4,12 +4,12 @@
  * @returns returns true if the matrix is square or false if it isn't
  */
 
-export function checkIfMatrixIsSquare(matrix: number[][]): boolean {
+export function checkIfMatrixIsSquare(matrix: any[][]): boolean {
 
     let matrixIsSquare: boolean = false;
 
-    for (let i = 0, j = 1; j < matrix.length && matrix[i].length == matrix[j].length; i++, j++) {
-        if (j == matrix.length - 1 && matrix.length == matrix[0].length)
+    for (let i = 0; i != matrix.length && matrix.length == matrix[i].length; i++) {
+        if (i == matrix.length - 1)
             matrixIsSquare = true;
     }
 
