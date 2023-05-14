@@ -1,22 +1,24 @@
 import { EncapsulatedArray } from "../../lab05/ex01b";
 
-
-//Testing ex01b
-describe('testing constructor', () => {
+describe('testing ex01m', () => {
 
     //Arrange
     const happyPath = [
         { array: new EncapsulatedArray([]), expectedResult: [] },
-        { array: new EncapsulatedArray([1, 2, 3]), expectedResult: [1, 2, 3] },
-        { array: new EncapsulatedArray([-1, -2, -3]), expectedResult: [-1, -2, -3] }
+        { array: new EncapsulatedArray([1]), expectedResult: [1] },
+        { array: new EncapsulatedArray([1, 1, 2, 1, 1]), expectedResult: [1, 1, 1, 1, 2] },
+        { array: new EncapsulatedArray([4, 1, 1, 2]), expectedResult: [1, 1, 2, 4] },
+        { array: new EncapsulatedArray([4, 3, 5, 6]), expectedResult: [3, 4, 5, 6] }
+
     ];
 
     //Act
     test.each(happyPath)(
-        'encapsulate an array of numbers',
+        'sort the elements of an array by ascending order',
 
         ({ array, expectedResult }) => {
 
+            array.orderArrayElementsInAscendingOrder();
             let result: number[] = array.array;
 
             //Assert
