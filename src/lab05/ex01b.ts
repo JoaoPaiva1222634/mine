@@ -1,6 +1,9 @@
 import { getNonRepeatingElementsOfArray } from "../lab04/ex13e";
 import { getNumberOfEvenDigits } from "../lab03/ex08b";
 import { getNumberOfDigits } from "../lab03/ex08a";
+import { getDigitsOfNumberIntoArray } from "../lab04/ex02";
+import { checkIfNumberIsPalindrome } from "../lab03/ex09a";
+import { checkIfValueIsAnArmstrongNumber } from "../lab03/ex09b";
 
 export class EncapsulatedArray {
   public array: number[];
@@ -292,11 +295,129 @@ export class EncapsulatedArray {
 
 
   //v) Retorne os elementos que são sequências crescentes (e.g. 347) do array. (**)
-  
+  getElementsThatAreAscendingSequences(): number[] {
+
+    let elementsThatAreAscendingSequences: number[] = [];
+    let elementIntoArray: number[] = [];
+
+    for (let index = 0; index < this.array.length; index++) {
+
+      let elementIsAscendingSequence: boolean = true;
+      elementIntoArray = getDigitsOfNumberIntoArray(this.array[index]);
+
+      if (elementIntoArray.length > 1) {
+        for (let digitIndex = 1; digitIndex < elementIntoArray.length && elementIsAscendingSequence; digitIndex++) {
+          if (elementIntoArray[digitIndex] <= elementIntoArray[digitIndex - 1])
+            elementIsAscendingSequence = false;
+        }
+
+        if (elementIsAscendingSequence)
+          elementsThatAreAscendingSequences.push(this.array[index]);
+      }
+    }
+
+    return elementsThatAreAscendingSequences;
+  }
+
+
+  //w) Retorne as capicuas existentes no array. (**)
+  getElementsThaArePalindromes(): number[] {
+
+    let elementsThatArePalindromes: number[] = [];
+
+    for (let elementOfArray of this.array) {
+      let numberIsPalindrome: boolean = checkIfNumberIsPalindrome(elementOfArray)
+
+      if (numberIsPalindrome)
+        elementsThatArePalindromes.push(elementOfArray)
+    }
+
+    return elementsThatArePalindromes
+  }
+
+
+  //x) Retorne os números existentes no array compostos exclusivamente por um mesmo algarismo (e.g., 222). (**)
+  getElementsThatAreComposedExclusivelyByTheSameDigit(): number[] {
+
+    let elementsThatAreComposedExclusivelyByTheSameDigit: number[] = [];
+    let elementIntoArray: number[] = [];
+
+    for (let elementOfArray of this.array) {
+      let elementIsComposedExclusivelyByTheSameDigit: boolean = true;
+      elementIntoArray = getDigitsOfNumberIntoArray(elementOfArray);
+
+      for (let index = 1; index < elementIntoArray.length && elementIsComposedExclusivelyByTheSameDigit; index++) {
+        if (elementIntoArray[index] != elementIntoArray[index - 1])
+          elementIsComposedExclusivelyByTheSameDigit = false;
+      }
+
+      if (elementIsComposedExclusivelyByTheSameDigit)
+        elementsThatAreComposedExclusivelyByTheSameDigit.push(elementOfArray);
+    }
+
+    return elementsThatAreComposedExclusivelyByTheSameDigit;
+  }
+
+
+  //y) Retorne os números existentes no array que não são de Amstrong. (**)
+  getElementsThatAreNotArmstrongNumbers(): number[] {
+
+    let elementsThatAreNotArmstrongNumbers: number[] = [];
+    let elementIsArmstrongNumber: boolean;
+    let index: number = 0;
+
+    do {
+
+      elementIsArmstrongNumber = checkIfValueIsAnArmstrongNumber(this.array[index])
+
+      if (!elementIsArmstrongNumber)
+        elementsThatAreNotArmstrongNumbers.push(this.array[index])
+
+      index++;
+
+    } while (index < this.array.length)
+
+    return elementsThatAreNotArmstrongNumbers;
+  }
+
+
+  //z) Retorne os elementos que contêm uma sequência crescente de pelo menos n algarismos (e.g., n=3, 347). (***)
+  getElementsThatAreAscendingSequenceOfAtLeastNDigits(n: number): number[] {
+
+    let elementsThatAreAscendingSequenceOfAtLeastNDigits: number[] = [];
+    let elementsThatAreAscendingSequences: number[] = this.getElementsThatAreAscendingSequences();
+    let elementIntoArray: number[] = [];
+
+    for (let elementOfArray of elementsThatAreAscendingSequences) {
+      elementIntoArray = getDigitsOfNumberIntoArray(elementOfArray)
+
+      if (elementIntoArray.length >= n)
+        elementsThatAreAscendingSequenceOfAtLeastNDigits.push(elementOfArray)
+    }
+
+    return elementsThatAreAscendingSequenceOfAtLeastNDigits;
+  }
+
+
+  //aa) Retorne True ou False, consoante o array é igual a um array passado por parâmetro. (**)
+  checkIfArrayIsTheSameAsEntryArray(entryArray: number[]): boolean {
+
+    let arrayIsTheSameAsEntryArray: boolean = true;
+
+    if (this.array.length != entryArray.length) {
+      arrayIsTheSameAsEntryArray = false;
+
+    } else {
+      
+      for (let index = 0; index < this.array.length && arrayIsTheSameAsEntryArray; index++) {
+        if (this.array[index] != entryArray[index])
+          arrayIsTheSameAsEntryArray = false;
+      }
+    }
+
+    return arrayIsTheSameAsEntryArray;
+  }
 }
 
-//let newClass: EncapsulatedArray = new EncapsulatedArray([5, 7, 1, 2, 7])
-//let newClass2: EncapsulatedArray = new EncapsulatedArray([])
-//console.log(newClass.orderArrayElementsInDescendingOrder())
-//newClass2.orderArrayElementsInAscendingOrder()
-//console.log(newClass2)
+//let newArray: EncapsulatedArray = new EncapsulatedArray([468, 245, 238, 456, 432])
+//console.log(newArray.getElementsThatAreAscendingSequences())

@@ -4,7 +4,7 @@ export function getProductOfTwoMatrices(matrixA: number[][], matrixB: number[][]
 
     let productOfTwoMatrices: number[][] = [[]];
 
-    if (checkIfAllColumnsAreEqual(matrixA) && matrixA[0].length === matrixB.length) {
+    if (checkIfAllColumnsAreEqual(matrixB) && matrixA.length === matrixB[0].length) {
 
         let product: number = 0;
 

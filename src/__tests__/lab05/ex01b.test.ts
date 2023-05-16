@@ -1,6 +1,5 @@
 import { EncapsulatedArray } from "../../lab05/ex01b";
 
-
 //Testing ex01b
 describe('testing constructor', () => {
 

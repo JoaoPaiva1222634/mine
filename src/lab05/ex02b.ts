@@ -1,10 +1,12 @@
 import { EncapsulatedArray } from "./ex01b";
+import { getPrimaryDiagonalOfMatrix } from "../lab04/ex17g";
+import { getSecondaryDiagonalOfMatrix } from "../lab04/ex17h";
 
-class EncapsulatedMatrix {
+export class EncapsulatedMatrix {
 
     //fields
 
-    private matrix: EncapsulatedArray[];
+    public matrix: EncapsulatedArray[];
 
     //constructor
 
@@ -20,7 +22,7 @@ class EncapsulatedMatrix {
 
     //functions
 
-    //alternative solution
+    //c) Adicione um novo elemento (valor) ao array encapsulado numa determinada linha, criando assim uma nova coluna nessa linha. (**)
     addNewElementToMatrix(newElement: number, rowIndex: number): void {
         this.matrix[rowIndex].addNewElement(newElement)
     }
@@ -112,7 +114,7 @@ class EncapsulatedMatrix {
                 if (currentValue != undefined)
                     sumOfElementsInColumn += currentValue;
             }
-            
+
             arraySumOfElementsInColumnOfMatrix.push(sumOfElementsInColumn)
         }
 
@@ -126,8 +128,79 @@ class EncapsulatedMatrix {
         }
         return matrixBiggestRowLength;
     }
+
+
+    //i) Retorne True se o array encapsulado corresponde a uma matriz quadrada. (**)
+    checkIfMatrixIsSquare(): boolean {
+
+        let matrixIsSquare: boolean = true;
+        let numberOfRows: number = this.matrix.length
+        let numberOfColumns: number = this.matrix[0].getNumberOfElementsOfArray()
+
+        for (let row = 0; row < this.matrix.length && matrixIsSquare; row++) {
+
+            numberOfColumns = this.matrix[row].getNumberOfElementsOfArray();
+
+            if (numberOfRows != numberOfColumns)
+                matrixIsSquare = false;
+        }
+        return matrixIsSquare;
+    }
+
+
+    //j) Retorne a quantidade de elementos não nulos na diagonal principal da matriz (se quadrada). Devolva -1 se a matriz não for quadrada. (**)
+    getAmountOfNotNullNumbersInPrimaryDiagonal(): number {
+
+        let amountOfNotNullNumbersInPrimaryDiagonal: number = -1;
+        let row: number = 0;
+        let numberOfColumns: number = this.matrix[row].getNumberOfElementsOfArray();
+
+        if (this.checkIfMatrixIsSquare()) {
+            amountOfNotNullNumbersInPrimaryDiagonal = 0;
+
+            for (; row < this.matrix.length; row++) {
+                for (let column = 0; column < numberOfColumns; column++) {
+
+                    if (row == column && this.matrix[row].getValueAccordingToIndex(column) != 0)
+                        amountOfNotNullNumbersInPrimaryDiagonal++;
+                }
+            }
+        }
+
+        return amountOfNotNullNumbersInPrimaryDiagonal;
+    }
+
+
+    //k) Retorne True caso a diagonal principal e a secundária sejam iguais, i.e., tenham os mesmos elementos e pela mesma ordem. (***)
+    checkIfPrimaryAndSecondaryDiagonalsAreEqual(): boolean {
+
+        let primaryAndSecondaryDiagonalsAreEqual: boolean = false;
+
+        if (this.checkIfMatrixIsSquare()) {
+
+            let numberOfRows: number = this.matrix.length;
+            let numberOfColumns: number = this.matrix[0].getNumberOfElementsOfArray();
+            let matrixToCheck: number[][] = [[]];
+
+            for (let row = 0; row < numberOfRows; row++) {
+                matrixToCheck[row] = [];
+                for (let column = 0; column < numberOfColumns; column++)
+                    matrixToCheck[row][column] = this.matrix[row].getValueAccordingToIndex(column)
+            }
+
+            let primaryDiagonalOfMatrix: number[] = getPrimaryDiagonalOfMatrix(matrixToCheck);
+            let secondaryDiagonalOfMatrix: number[] = getSecondaryDiagonalOfMatrix(matrixToCheck);
+            primaryAndSecondaryDiagonalsAreEqual = true;
+            let index: number = 0;
+
+            do {
+                if (primaryDiagonalOfMatrix[index] != secondaryDiagonalOfMatrix[index])
+                    primaryAndSecondaryDiagonalsAreEqual = false;
+
+                index++;
+            } while (primaryAndSecondaryDiagonalsAreEqual === true && index < numberOfColumns)
+        }
+
+        return primaryAndSecondaryDiagonalsAreEqual;
+    }
 }
-
-let testMatrix: EncapsulatedMatrix = new EncapsulatedMatrix([[4, 5, 33, 1, 2], [1, 2, 3, 5], [4, 6, 4]])
-
-console.log(testMatrix.getArraySumOfElementsInColumnOfMatrix())
